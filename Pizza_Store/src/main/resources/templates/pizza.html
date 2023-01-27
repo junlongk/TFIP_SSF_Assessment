@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Panucci's Pizza - Order Delivery Details</title>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+
+    <div>
+        <h1>Order Delivery Details</h1>
+    </div>
+
+    <form
+        action="#"
+        data-th-action="@{/pizza/order}"
+        data-th-object="${pizzaOrder}"
+        method="post">
+        <div>
+            <p>Name:</p>
+            <input type="text" data-th-field="*{name}"/>
+            <br />
+            <span
+                class="error"
+                data-th-if="${#fields.hasErrors('name')}"
+                data-th-errors="*{name}"
+            ></span>
+        </div>
+        <br />
+
+        <div>
+            <p>Address:</p>
+            <input type="text" data-th-field="*{address}"/>
+            <br />
+            <span
+                    class="error"
+                    data-th-if="${#fields.hasErrors('address')}"
+                    data-th-errors="*{address}"
+            ></span>
+        </div>
+        <br />
+
+        <div>
+            <p>Phone:</p>
+            <input type="text" data-th-field="*{phone}"/>
+            <br />
+            <span
+                    class="error"
+                    data-th-if="${#fields.hasErrors('phone')}"
+                    data-th-errors="*{phone}"
+            ></span>
+        </div>
+        <br />
+
+        <div>
+            <p>Rush:</p>
+            <input type="checkbox" data-th-field="*{rush}"/>
+        </div>
+        <br />
+
+        <div>
+            <p>Comments:</p>
+            <input type="text" data-th-field="*{comments}"/>
+            <br />
+            <span
+                    class="error"
+                    data-th-if="${#fields.hasErrors('comments')}"
+                    data-th-errors="*{comments}"
+            ></span>
+        </div>
+        <br />
+
+        <div>
+            <button type="submit">Cancel Order</button>
+            <button type="submit">Place Order</button>
+        </div>
+    </form>
+
+    </body>
+</html>

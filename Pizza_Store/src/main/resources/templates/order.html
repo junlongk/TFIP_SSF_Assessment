@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body data-th-object="${pizzaOrder}">
+    <h1>Delivery Details</h1>
+    <p>Order Number:</p>
+    <p data-th-text="*{orderId}"></p>
+    <br>
+    <p>Your order will be delivered to</p>
+    <p data-th-text="*{address}"></p>
+    <br>
+    <p>Pizza cost:</p>
+    <!-- Retrieve cost associated with type of pizza & size of pizza & quantity of pizza, then multiply to get total cost-->
+    <br>
+    <p data-th-text="*{rush} ? 'Rush: $2' : ''"></p>
+    <br>
+    <p>Total cost:</p>
+    <!--  Pizza cost + rush cost (if applicable)-->
+    <br>
+
+</body>
+</html>
