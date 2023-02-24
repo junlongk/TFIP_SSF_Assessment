@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panucci's Pizza</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<div class="title">
+    <h2>Delivery Details</h2>
+</div>
+    <div data-th-object="${order}">
+        <span>Order Number: </span>
+            <a data-th-href="@{/order/{orderId}(orderId=${order.orderId})}">
+                <span data-th-text="*{orderId}"></span>
+            </a>
+        <br />
+
+        <span>Your order will be delivered to </span>
+        <span data-th-text="*{address}"></span>
+        <br />
+
+        <span >Pizza cost: $</span>
+        <span data-th-text="*{pizzaCost}"></span>
+        <br />
+
+        <span data-th-text="*{rush} ? 'Rush: $2' : ''"></span>
+        <br />
+
+        <span>Total cost: $</span>
+        <span data-th-text="*{totalCost}"></span>
+        <br />
+    </div>
+
+</body>
+</html>

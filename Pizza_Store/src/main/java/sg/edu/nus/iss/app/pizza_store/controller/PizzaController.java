@@ -23,6 +23,7 @@ public class PizzaController {
                             BindingResult bindingResult,
                             Model model){
         if(bindingResult.hasErrors()){
+            model.addAttribute("pizzaOrder", pizzaOrder);
             System.out.println("View 0: BindingResult error, return to index.html");
             return "index";
         }
